@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Libros - Portal de Biblioteca</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .contenedor {
+            background-color: white;
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .libro {
+            border: 1px solid #999;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .disponible {
+            color: green;
+            font-weight: bold;
+        }
+
+        .no-disponible {
+            color: red;
+            font-weight: bold;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Portal de Biblioteca</h1>
+
+        <h2>Libros disponibles</h2>
+
+        {% for libro in libros %}
+
+        <div class="libro">
+
+            <h3>{{ libro.titulo }}</h3>
+
+            <p>
+                <strong>Autor:</strong>
+                {{ libro.autor }}
+            </p>
+
+            {% if libro.disponibles > 0 %}
+
+            <p class="disponible">
+                Disponible: {{ libro.disponibles }} ejemplares
+            </p>
+
+            {% else %}
+
+            <p class="no-disponible">
+                No disponible
+            </p>
+
+            {% endif %}
+
+        </div>
+
+        {% endfor %}
+
+        <a href="/">Inicio</a>
+
+        <a href="/perfil">Mi perfil</a>
+
+        <a href="/logout">Cerrar sesión</a>
+
+    </div>
+
+</body>
+
+</html>

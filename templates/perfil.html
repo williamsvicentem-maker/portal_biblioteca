@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Perfil</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .contenedor {
+            background-color: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #ccc;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .dato {
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #eeeeee;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Mi Perfil</h1>
+
+        <div class="dato">
+            <strong>Usuario:</strong>
+            {{ usuario }}
+        </div>
+
+        <div class="dato">
+            <strong>Estado:</strong>
+            Sesión iniciada
+        </div>
+
+        <a href="/libros">Ver libros</a>
+
+        <a href="/">Inicio</a>
+
+        <a href="/logout">Cerrar sesión</a>
+
+    </div>
+
+</body>
+
+</html>
